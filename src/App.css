@@ -1,38 +1,409 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+body,
+html,
+:root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
   min-height: 100vh;
+  top: 0;
+  bottom: 0;
+  background: linear-gradient(315deg, #0b151f, #193046);
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  box-shadow: -39px -39px 78px #091118,
+    39px 39px 78px #0f1d2c;
+  color: #000000;
+}
+
+
+
+body::-webkit-scrollbar,
+html::-webkit-scrollbar,
+:root::-webkit-scrollbar {
+  display: none;
+}
+
+
+.nav {
+  width: 100%;
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
+  /* padding-top: 8px; */
+  /* padding-bottom: 8px; */
+  border-radius: 5px;
+  background-color: #27272796;
+  box-shadow: 0px 0px 31px -1px rgba(0, 0, 0, 0.52);
+  -webkit-box-shadow: 0px 0px 31px -1px rgba(0, 0, 0, 0.52);
+  -moz-box-shadow: 0px 0px 31px -1px rgba(0, 0, 0, 0.52);
+}
+
+.nav-logo {
+  margin-left: 5.5%;
+  padding: 5px 1px;
+  margin-top: -6px;
+}
+
+.logo {
+  background: none;
+  width: 275px;
+}
+
+.nav-right {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 10px;
+  margin-right: 5%;
+}
+
+.nav-links,
+.nav-logo {
+  color: #ffffff;
+  background: none;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 25px;
+  padding-top: 7px;
+  border-radius: 10px;
+  border: none;
+  margin-bottom: -1px;
+  cursor: pointer;
+}
+
+.nav-links {
+  padding: 3px 9px;
+  margin-right: 20px;
+}
+
+.nav-links:hover {
+  transform: translate(1px, -2px);
+  background-color: rgba(0, 0, 0, 0.265);
+}
+
+.logout {
+  border: 1px solid rgba(255, 0, 0, 0.558);
+}
+
+.logout:hover {
+  background-color: rgba(255, 0, 0, 0.558);
+}
+
+
+.nav-cart {
+  width: 35px;
+}
+
+.delete-button {
+  background: none;
+  border: none;
+  position: absolute;
+  background-color: #ffffff77;
+  border-radius: 30px;
+  cursor: pointer;
+  padding-top: 3px;
+  z-index: 100;
+  top: 7%;
+  left: 30%;
+}
+
+.delete-button:hover {
+  background-color: #7802026e;
+}
+
+.delete-button img {
+  width: 50px;
+}
+
+.ar-button {
+  background: none;
+  border: none;
+  position: absolute;
+  left: 30%;
+  top: 84%;
+
+  z-index: 100;
+  background-color: #ffffff77;
+  border-radius: 30px;
+  cursor: pointer;
+  padding-top: 3px;
+  /* display: none; */
+}
+
+.ar-button:hover {
+  background-color: #8888885b;
+}
+
+.ar-button img {
+  width: 50px;
+}
+
+.Home {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 0 3%;
+  position: relative;
+  gap: 20px;
+}
+
+.Home-Avatar {
+  background: url('./imgs/changing room.jpg');
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: multiply;
+  border-radius: 10px;
+  max-width: 420px;
+  margin: 2.5% 0;
+  background-color: #404a51;
+}
+
+.Home-Avatar:hover {
+  cursor: pointer;
+}
+
+.Home-Cloths {
+  overflow-y: scroll;
+  padding-right: 2%;
+  max-height: 580px;
+  max-width: 100%;
+}
+
+.Home-Cloths::-webkit-scrollbar {
+  display: none;
+}
+
+.row {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 2%;
+}
+
+.Home-Cloths-box-row {
+  border-radius: 15px;
+  height: 130px;
+  width: 140px;
+  max-width: 140px;
+  background: linear-gradient(93deg, rgba(201, 189, 148, 0) 16%, #b0b0b09d 30%);
+  padding: 50px;
+  transform: skewX(-10deg);
+  margin-top: 5.1%;
+  margin-bottom: 6.1%;
+  position: relative;
+}
+
+.Home-Cloths-box-row:hover {
+  cursor: pointer;
+  background: linear-gradient(93deg, rgba(201, 189, 148, 0) 16%, rgba(186, 186, 186, 0.491) 30%);
+}
+
+.Home-Cloths-box-row img {
+  width: 65%;
+  height: 125px;
+  position: absolute;
+  top: 15px;
+  left: 70px;
+  border-radius: 8px;
+  background-color: #1d2b3b8a;
+}
+
+.Home-Cloths-box-row p {
+  position: absolute;
+  bottom: 0;
+  left: 30%;
+  right: 10%;
+  text-align: center;
+  font-size: 15px;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.navigation {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  border-radius: 10px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: .5s;
+  transition-delay: .8s;
+  z-index: 999;
+  transition-delay: 0s;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.navigation.active {
+  background: #98a1bec9;
+  width: 200px;
+  height: 200px;
+  transition-delay: 0s;
+  transform: translate(-134px, -134px);
+}
+
+.navigation span {
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #ffff;
+  border-radius: 50%;
+  font-size: 0;
+  transform: translate(calc(12px * var(--x)), calc(12px * var(--y)));
+  transition: transform .5s, width .5s, height .5s, background .5s;
+  transition-delay: calc(.1s * var(--i));
+  visibility: hidden;
+}
+
+.navigation.active span {
+  width: 45px;
+  height: 45px;
+  visibility: visible;
+  background: #535c7a;
+  font-size: 15PX;
+  transform: translate(calc(60px * var(--x)), calc(60px * var(--y)));
+}
+
+
+
+.navigation.size {
+  left: 4%;
+  top: 84%;
+}
+
+.navigation.color {
+  top: 7%;
+  left: 4%;
+}
+
+.navigation.size.active {
+  transform: translate(0%, -72%);
+}
+
+.navigation.color.active {
+  transform: translate(0%, 0%);
+}
+
+.navigation span ion-icon {
+  transition: .5s;
+  font-size: 0em;
+}
+
+.navigation.active span ion-icon {
+  font-size: 1.35em;
+  color: #fff;
+}
+
+.navigation.active span:hover {
+  color: #ffffff;
+  filter: drop-shadow(0 0 2px #ffffff8f) drop-shadow(0 0 5px #ffffff8f) drop-shadow(0 0 15px #ffffff8f);
+}
+
+/* Apply responsive styles for screens up to 768px */
+@media screen and (max-width: 768px) {
+  .nav {
+    /* display: flex; */
+    flex-direction: column;
+    align-items: center;
+    padding-top: 3px;
   }
-  to {
-    transform: rotate(360deg);
+
+  .nav-logo {
+    margin-left: 0;
+    margin-bottom: 10px;
   }
+
+  .nav-right {
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    width: 90%;
+  }
+
+  .nav-links {
+    font-size: 18px;
+    margin-right: 0;
+    margin-bottom: 10px;
+    padding: 5px;
+  }
+
+  .Home {
+    flex-direction: column;
+    margin: 0;
+    padding: 5%;
+  }
+
+  .Home-Avatar {
+    max-width: 110%;
+    max-height: 439px;
+    /* margin: 5% 0; */
+  }
+
+  .Home-Cloths {
+    max-height: none;
+  }
+
+  /* .row {
+    flex-direction: column;
+    gap: 10px;
+  } */
+
+  .Home-Cloths-box-row {
+    max-width: 100px;
+    max-height: 90px;
+    transform: skewX(0deg);
+    margin-top: 2%;
+    padding: 10px;
+    margin-left: -17px;
+  }
+
+  .Home-Cloths-box-row img {
+    height: 50%;
+    top: 4%;
+    left: 30%;
+  }
+
+  .Home-Cloths-box-row p {
+    text-align: center;
+    font-size: 14px;
+  }
+
+  .ar-button {
+    display: block;
+    top: 4.5%;
+    left: 78%;
+  }
+
+  .delete-button {
+    top: 4.5%;
+    left: 7%;
+  }
+
+  .navigation.size {
+    top: 50.2%;
+    left: 78%;
+  }
+
+  .navigation.color {
+    top: 50.2%;
+    left: 7%;
+  }
+
+  .navigation.size.active {
+    transform: translate(-70%, -68%);
+  }
+
+  .navigation.color.active {
+    transform: translate(-3%, -68%);
+  }
+}
+
+/* Apply responsive styles for screens between 769px and 1024px */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  /* Add your responsive styles for this range here */
+}
+
+/* Apply responsive styles for screens above 1024px */
+@media screen and (min-width: 1025px) {
+  /* Add your responsive styles for this range here */
 }
